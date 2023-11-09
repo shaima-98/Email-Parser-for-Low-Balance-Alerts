@@ -1,4 +1,4 @@
-Email Parser for Low Balance Alerts
+# Email Parser for Low Balance Alerts
 
 1. Introduction
 
