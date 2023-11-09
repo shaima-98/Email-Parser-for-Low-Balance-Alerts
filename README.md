@@ -14,6 +14,7 @@ This Python script is designed to parse emails from a specified mailbox and extr
 - `bs4` (Beautiful Soup): Library for pulling data out of HTML and XML files.
 
 3. Configuration
+
   A. Generating App password for gmail account:
 
 a.Go to your Google Account.
