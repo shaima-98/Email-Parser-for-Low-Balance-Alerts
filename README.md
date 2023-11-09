@@ -45,10 +45,10 @@ This Python script is designed to parse emails from a specified mailbox and extr
 4. Functionality
 
 - **Log in to Email Account**: The script logs in to the specified email account using the provided credentials.
-- **Select Mailbox**: It selects the mailbox/folder where the search for low balance alerts will be performed.
+- **Select Mailbox**: It selects the mailbox where the search for low balance alerts will be performed.
 - **Search Criteria**: Emails are searched based on the sender's email address and within the specified date range.
 - **Data Extraction**: The script extracts company names and wallet balances from email subjects and bodies.
-- **Output**: The parsed data (company names and wallet balances) is printed to the console.
+- **Output**: The parsed data (company names and wallet balances) is sent to an excel file.
 - **Logout**: Finally, the script logs out and closes the connection to the email server.
 
 5. Usage

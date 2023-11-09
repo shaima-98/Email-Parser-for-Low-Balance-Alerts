@@ -37,7 +37,7 @@ def get_company_names():
     mail.select(mailbox_name)
 
     # Search for emails from the specific sender (abc@xyz.com)
-    sender_email = "****"
+    sender_email = "abc@xyz.com"
     search_criteria = f'(FROM "{sender_email}") SINCE {start_date} BEFORE {end_date}'
 
     # Search for emails matching the criteria
@@ -50,8 +50,8 @@ def get_company_names():
     company_data = []
 
     # Regular expression pattern to match the subject
-    subject_pattern = re.compile(r'(.*?) wallet balance is running low!', re.IGNORECASE)
-    balance_pattern = re.compile(r'Wallet Balance: (\d+\.\d+)', re.IGNORECASE)
+    subject_pattern = re.compile(r'(.*?) balance is running low!', re.IGNORECASE)
+    balance_pattern = re.compile(r'Balance: (\d+\.\d+)', re.IGNORECASE)
 
     # Loop through the email IDs and fetch email subjects
     for email_id in email_id_list:
@@ -71,7 +71,7 @@ def get_company_names():
             email_content = email.message_from_bytes(body_data[0][1]).get_payload()
             soup = BeautifulSoup(email_content, 'html.parser')
             # Search for the wallet balance in the parsed HTML
-            target_text = "Wallet Balance"
+            target_text = "Balance"
             p_elements = soup.find_all('p')
 
             # Iterate through the p elements to find the relevant one
@@ -84,10 +84,8 @@ def get_company_names():
             company_name = match_subject.group(1)
             company_data.append({"company_name": company_name, "wallet_balance": wallet_balance})
 
-    # Print the list of company names and wallet balances
-    for data in company_data:
-        print(f"Company Name: {data['company_name']}, Wallet Balance: {data['wallet_balance']}")
-
+    # Take the list of company names and wallet balances to an excel file
+    company_data.to_excel("Company_list.xlsx", sheet_name='Company_details', index=False)
     # Logout and close the connection
     mail.logout()
 
