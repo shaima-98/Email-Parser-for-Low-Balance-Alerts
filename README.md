@@ -1,1 +1,64 @@
-# Email-Parser-for-Low-Balance-Alerts
+Email Parser for Low Balance Alerts
+
+1. Introduction
+
+This Python script is designed to parse emails from a specified mailbox and extract information about companies with low wallet balances. It connects to an IMAP server using the provided credentials, searches for emails matching specific criteria, and extracts relevant data from the email subjects and bodies.
+
+2. Dependencies
+
+- `imaplib`: Library for accessing and manipulating mail using the Internet Message Access Protocol (IMAP).
+- `email`: Provides tools for parsing and handling email messages.
+- `email.header`: Allows decoding email headers.
+- `datetime`: Provides functionality to work with dates and times.
+- `re`: Module for regular expressions.
+- `bs4` (Beautiful Soup): Library for pulling data out of HTML and XML files.
+
+3. Configuration
+  A. Generating App password for gmail account:
+
+a.Go to your Google Account.
+b. Select Security.
+c. Under "Signing in to Google," select 2-Step Verification.
+d. At the bottom of the page, select App passwords.
+e. Enter a name that helps you remember where you’ll use the app password.
+f. Select Generate.
+g. The generated app password will be displayed. Copy it to a secure location, as you won't be able to see it again.
+h. Use App Password in Your Script. Replace the 'email_pass' variable in your script with the generated app password.
+
+  B. Email Server Settings:
+
+email_user: Your email address.
+email_pass: Generated app password
+email_server: IMAP server address (e.g., "imap.gmail.com").
+label_name: The folder where you want to search for emails (e.g., "Low balance").
+
+  C. Date Range Settings:
+
+start_date: The start date for searching emails 
+end_date: The end date for searching emails
+
+  D. Sender Email:
+
+sender_email: The specific sender's email address to filter emails.
+
+4. Functionality
+
+1. **Log in to Email Account**: The script logs in to the specified email account using the provided credentials.
+
+2. **Select Mailbox**: It selects the mailbox/folder where the search for low balance alerts will be performed.
+
+3. **Search Criteria**: Emails are searched based on the sender's email address and within the specified date range.
+
+4. **Data Extraction**: The script extracts company names and wallet balances from email subjects and bodies.
+
+5. **Output**: The parsed data (company names and wallet balances) is printed to the console.
+
+6. **Logout**: Finally, the script logs out and closes the connection to the email server.
+
+5. Usage
+
+1. Replace placeholders (`email_user`, `email_pass`, `email_server`, `label_name`, and `sender_email`) with your actual email and server information.
+
+2. Ensure that the required dependencies (`imaplib`, `email`, `datetime`, `re`, `bs4`) are installed.
+
+3. Run the script.
