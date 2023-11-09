@@ -17,49 +17,42 @@ This Python script is designed to parse emails from a specified mailbox and extr
 
   A. Generating App password for gmail account:
 
-a.Go to your Google Account.
-b. Select Security.
-c. Under "Signing in to Google," select 2-Step Verification.
-d. At the bottom of the page, select App passwords.
-e. Enter a name that helps you remember where you’ll use the app password.
-f. Select Generate.
-g. The generated app password will be displayed. Copy it to a secure location, as you won't be able to see it again.
-h. Use App Password in Your Script. Replace the 'email_pass' variable in your script with the generated app password.
+- Go to your Google Account.
+- Select Security.
+- Under "Signing in to Google," select 2-Step Verification.
+- At the bottom of the page, select App passwords.
+- Enter a name that helps you remember where you’ll use the app password.
+- Select Generate.
+- The generated app password will be displayed. Copy it to a secure location, as you won't be able to see it again.
+- Use App Password in Your Script. Replace the 'email_pass' variable in your script with the generated app password.
 
   B. Email Server Settings:
 
-email_user: Your email address.
-email_pass: Generated app password
-email_server: IMAP server address (e.g., "imap.gmail.com").
-label_name: The folder where you want to search for emails (e.g., "Low balance").
+- email_user: Your email address.
+- email_pass: Generated app password
+- email_server: IMAP server address (e.g., "imap.gmail.com").
+- label_name: The folder where you want to search for emails (e.g., "Low balance").
 
   C. Date Range Settings:
 
-start_date: The start date for searching emails 
-end_date: The end date for searching emails
+- start_date: The start date for searching emails 
+- end_date: The end date for searching emails
 
   D. Sender Email:
 
-sender_email: The specific sender's email address to filter emails.
+- sender_email: The specific sender's email address to filter emails.
 
 4. Functionality
 
-1. **Log in to Email Account**: The script logs in to the specified email account using the provided credentials.
-
-2. **Select Mailbox**: It selects the mailbox/folder where the search for low balance alerts will be performed.
-
-3. **Search Criteria**: Emails are searched based on the sender's email address and within the specified date range.
-
-4. **Data Extraction**: The script extracts company names and wallet balances from email subjects and bodies.
-
-5. **Output**: The parsed data (company names and wallet balances) is printed to the console.
-
-6. **Logout**: Finally, the script logs out and closes the connection to the email server.
+- **Log in to Email Account**: The script logs in to the specified email account using the provided credentials.
+- **Select Mailbox**: It selects the mailbox/folder where the search for low balance alerts will be performed.
+- **Search Criteria**: Emails are searched based on the sender's email address and within the specified date range.
+- **Data Extraction**: The script extracts company names and wallet balances from email subjects and bodies.
+- **Output**: The parsed data (company names and wallet balances) is printed to the console.
+- **Logout**: Finally, the script logs out and closes the connection to the email server.
 
 5. Usage
 
-1. Replace placeholders (`email_user`, `email_pass`, `email_server`, `label_name`, and `sender_email`) with your actual email and server information.
-
-2. Ensure that the required dependencies (`imaplib`, `email`, `datetime`, `re`, `bs4`) are installed.
-
-3. Run the script.
+- Replace placeholders (`email_user`, `email_pass`, `email_server`, `label_name`, and `sender_email`) with your actual email and server information.
+- Ensure that the required dependencies (`imaplib`, `email`, `datetime`, `re`, `bs4`) are installed.
+- Run the script.
